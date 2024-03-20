@@ -1,0 +1,357 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+a:hover, a:active {
+  outline: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: max-content;
+  padding: 20px;
+  gap: 30px;
+  max-width: 1440px;
+}
+
+.hangman {
+  position: relative;
+  height: -moz-max-content;
+  height: max-content;
+}
+.hangman__img {
+  height: 470px;
+}
+.hangman__part {
+  position: absolute;
+  transition: all 0.4s;
+  opacity: 0;
+  visibility: hidden;
+}
+.hangman__part_visible {
+  opacity: 1;
+  visibility: visible;
+}
+.hangman__part_head {
+  top: 121px;
+  left: 196px;
+}
+.hangman__part_body {
+  top: 219px;
+  left: 245px;
+}
+.hangman__part_hand-left {
+  top: 222px;
+  left: 180px;
+}
+.hangman__part_hand-right {
+  top: 222px;
+  left: 248px;
+}
+.hangman__part_leg-left {
+  top: 347px;
+  left: 180px;
+}
+.hangman__part_leg-right {
+  top: 347px;
+  left: 247px;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px 0px;
+}
+.game__title {
+  margin-bottom: 10px;
+}
+.game__hint {
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+}
+.game__error {
+  font-size: 17px;
+  font-weight: 700;
+}
+.game__error span {
+  color: red;
+}
+
+.word {
+  display: flex;
+  gap: 0 5px;
+  margin-bottom: 30px;
+  min-height: 25px;
+}
+.word__item {
+  border-bottom: 3px solid black;
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  min-width: 5vmin;
+}
+.word__item_open {
+  border: none;
+}
+
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  grid-column: 1/-1;
+}
+.keyboard__item {
+  background-color: rgb(84, 85, 172);
+  border-radius: 6px;
+  cursor: pointer;
+  color: #fff;
+  display: flex;
+  font-weight: 700;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  height: 8vmin;
+  width: 8vmin;
+}
+.keyboard__item_true {
+  background-color: green;
+}
+.keyboard__item_false {
+  background-color: red;
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.modal__active {
+  display: block;
+}
+.modal__inner {
+  background-color: rgb(84, 85, 172);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 15px;
+  max-width: 400px;
+  width: 100%;
+}
+.modal__result {
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.modal__secret {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.modal__btn {
+  color: rgb(84, 85, 172);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  width: 100%;
+}
+
+@media (max-width: 830px) {
+  .wrapper {
+    gap: 60px 30px;
+  }
+  .hangman__img {
+    height: 350px;
+  }
+  .hangman__part_head {
+    top: 89px;
+    left: 132px;
+  }
+  .hangman__part_body {
+    top: 190px;
+    left: 181px;
+  }
+  .hangman__part_hand-left {
+    top: 190px;
+    left: 119px;
+  }
+  .hangman__part_hand-right {
+    top: 190px;
+    left: 183px;
+  }
+  .hangman__part_leg-left {
+    top: 315px;
+    left: 118px;
+  }
+  .hangman__part_leg-right {
+    top: 315px;
+    left: 183px;
+  }
+}
+@media (max-width: 600px) {
+  .wrapper {
+    gap: 40px 10px;
+  }
+  .hangman__img {
+    height: 250px;
+  }
+  .hangman__part_head {
+    top: 61px;
+    left: 106px;
+    height: 50px;
+  }
+  .hangman__part_body {
+    top: 113px;
+    left: 130px;
+    height: 60px;
+  }
+  .hangman__part_hand-left {
+    top: 111px;
+    left: 110px;
+    height: 25px;
+  }
+  .hangman__part_hand-right {
+    top: 110px;
+    left: 131px;
+    height: 25px;
+  }
+  .hangman__part_leg-left {
+    top: 171px;
+    left: 110px;
+    height: 25px;
+  }
+  .hangman__part_leg-right {
+    top: 170px;
+    left: 131px;
+    height: 25px;
+  }
+}
+@media (max-width: 550px) {
+  .game__title {
+    font-size: 18px;
+    margin-bottom: 0;
+  }
+  .game__hint {
+    font-size: 16px;
+  }
+  .game__error {
+    font-size: 14px;
+  }
+  .word {
+    margin-bottom: 10px;
+  }
+  .word__item {
+    font-size: 16px;
+  }
+}
+@media (max-width: 500px) {
+  .hangman__img {
+    height: 160px;
+  }
+  .hangman__part_head {
+    top: 41px;
+    left: 61px;
+    height: 45px;
+  }
+  .hangman__part_body {
+    top: 84px;
+    left: 82px;
+    height: 50px;
+  }
+  .hangman__part_hand-left {
+    top: 83px;
+    left: 64px;
+  }
+  .hangman__part_hand-right {
+    top: 84px;
+    left: 82px;
+  }
+  .hangman__part_leg-left {
+    top: 130px;
+    left: 64px;
+  }
+  .hangman__part_leg-right {
+    top: 130px;
+    left: 82px;
+  }
+  .modal__inner {
+    width: 90%;
+  }
+}/*# sourceMappingURL=style.css.map */

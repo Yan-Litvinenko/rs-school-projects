@@ -1,0 +1,3 @@
+# rss-puzzle/.husky/pre-push
+cd rss-puzzle
+npm run validate-branch

@@ -1,0 +1,45 @@
+.registration {
+  background-image: url(../../assets/images/home.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  &__title {
+    margin: 0 0 20px;
+    padding: 0;
+  }
+
+  &__form-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 15px 0;
+    width: 350px;
+  }
+
+  &__complete {
+    border-radius: 7px;
+    background-color: rgb(109, 60, 85);
+    color: inherit;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s;
+    text-transform: capitalize;
+    height: 50px;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  &__error {
+    color: red;
+    cursor: auto;
+    font-size: 18px;
+    text-transform: none;
+  }
+}

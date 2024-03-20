@@ -1,0 +1,86 @@
+.home {
+  background-image: url('../../assets/images/home.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  &__title {
+    font-size: 72px;
+    margin: 0 0 30px;
+    text-align: center;
+  }
+
+  &__description {
+    margin: 0;
+  }
+
+  &__description + &__description {
+    margin-top: 10px;
+  }
+
+  &__description:last-of-type {
+    margin-bottom: 40px;
+  }
+
+  &__btn {
+    border-radius: 7px;
+    background-color: rgb(109, 60, 85);
+    color: inherit;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s;
+    text-transform: capitalize;
+    height: 50px;
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+.greeting {
+  animation: show 8s forwards;
+  cursor: auto;
+  position: absolute;
+  top: -200px;
+  left: 10px;
+
+  &__inner {
+    background-color: #fff;
+    color: #000;
+    border-radius: 15px;
+    padding: 2px 10px;
+  }
+
+  &__deactive {
+    display: none;
+  }
+}
+
+@keyframes show {
+  0% {
+    top: -200px;
+  }
+
+  10% {
+    top: -200px;
+  }
+
+  25% {
+    top: 30px;
+  }
+
+  85% {
+    top: 30px;
+  }
+
+  100% {
+    top: -200px;
+  }
+}

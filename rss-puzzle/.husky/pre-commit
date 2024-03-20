@@ -1,0 +1,4 @@
+# rss-puzzle/.husky/pre-commit
+cd rss-puzzle
+npm run format
+npm run lint:fix

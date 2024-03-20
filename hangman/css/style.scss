@@ -1,0 +1,366 @@
+@import 'reset.scss';
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: max-content;
+    padding: 20px;
+    gap: 30px;
+    max-width: 1440px;
+}
+
+.hangman {
+    position: relative;
+    height: max-content;
+
+    &__img {
+        height: 470px;
+    }
+
+    &__part {
+        position: absolute;
+        transition: all .4s;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &__part_visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__part_head {
+        top: 121px;
+        left: 196px;
+    }
+
+    &__part_body {
+        top: 219px;
+        left: 245px;
+    }
+
+    &__part_hand-left {
+        top: 222px;
+        left: 180px;
+    }
+
+    &__part_hand-right {
+        top: 222px;
+        left: 248px;
+    }
+
+    &__part_leg-left {
+        top: 347px;
+        left: 180px;
+    }
+
+    &__part_leg-right {
+        top: 347px;
+        left: 247px;
+    }
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px 0px;
+
+    &__title {
+        margin-bottom: 10px;
+    }
+
+    &__hint {
+        font-size: 18px;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    &__error {
+        font-size: 17px;
+        font-weight: 700;
+    }
+
+    &__error span {
+        color: red;
+    }
+}
+
+.word {
+    display: flex;
+    gap: 0 5px;
+    margin-bottom: 30px;
+    min-height: 25px;
+
+    &__item {
+        border-bottom: 3px solid black;
+        font-size: 22px;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+        min-width: 5vmin;
+    }
+
+    &__item_open {
+        border: none;
+    }
+}
+
+.keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    grid-column: 1 / -1;
+
+    &__item {
+        background-color: rgb(84, 85, 172);
+        border-radius: 6px;
+        cursor: pointer;
+        color: #fff;
+        display: flex;
+        font-weight: 700;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        height: 8vmin;
+        width: 8vmin;
+    }
+
+    &__item_true {
+        background-color: green;
+    }
+
+    &__item_false {
+        background-color: red;
+    }
+}
+
+.modal {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+
+    &__active {
+        display: block;
+    }
+
+    &__inner {
+        background-color: rgb(84, 85, 172);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 15px;
+        max-width: 400px;
+        width: 100%;
+    }
+
+    &__result {
+        color: #fff;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    &__secret {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    &__btn {
+        color: rgb(84, 85, 172);
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 18px;
+        text-transform: uppercase;
+        padding: 5px 10px;
+        width: 100%;
+    }
+}
+
+@media(max-width: 830px) {
+    .wrapper {
+        gap: 60px 30px;
+    }
+
+    .hangman {
+        &__img {
+            height: 350px;
+        }
+
+        &__part_head {
+            top: 89px;
+            left: 132px;
+        }
+
+        &__part_body {
+            top: 190px;
+            left: 181px;
+        }
+
+        &__part_hand-left {
+            top: 190px;
+            left: 119px;
+        }
+
+        &__part_hand-right {
+            top: 190px;
+            left: 183px;
+        }
+
+        &__part_leg-left {
+            top: 315px;
+            left: 118px;
+        }
+
+        &__part_leg-right {
+            top: 315px;
+            left: 183px;
+        }
+    }
+}
+
+@media(max-width: 600px) {
+    .wrapper {
+        gap: 40px 10px;
+    }
+    .hangman {
+        &__img {
+            height: 250px;
+        }
+
+        &__part_head {
+            top: 61px;
+            left: 106px;
+            height: 50px;
+        }
+
+        &__part_body {
+            top: 113px;
+            left: 130px;
+            height: 60px;
+        }
+
+        &__part_hand-left {
+            top: 111px;
+            left: 110px;
+            height: 25px;
+        }
+
+        &__part_hand-right {
+            top: 110px;
+            left: 131px;
+            height: 25px;
+        }
+
+        &__part_leg-left {
+            top: 171px;
+            left: 110px;
+            height: 25px;
+        }
+
+        &__part_leg-right {
+            top: 170px;
+            left: 131px;
+            height: 25px;
+        }
+    }
+}
+
+@media(max-width: 550px) {
+    .game {
+        &__title {
+            font-size: 18px;
+            margin-bottom: 0;
+        }
+
+        &__hint {
+            font-size: 16px;
+        }
+
+        &__error {
+            font-size: 14px;
+        }
+    }
+
+    .word {
+        margin-bottom: 10px;
+
+        &__item {
+            font-size: 16px;
+        }
+    }
+}
+
+@media(max-width: 500px) {
+    .hangman {
+        &__img {
+            height: 160px;
+        }
+
+        &__part_head {
+            top: 41px;
+            left: 61px;
+            height: 45px;
+        }
+
+        &__part_body {
+            top: 84px;
+            left: 82px;
+            height: 50px;
+        }
+
+        &__part_hand-left {
+            top: 83px;
+            left: 64px;
+        }
+
+        &__part_hand-right {
+            top: 84px;
+            left: 82px;
+        }
+
+        &__part_leg-left {
+            top: 130px;
+            left: 64px;
+        }
+
+        &__part_leg-right {
+            top: 130px;
+            left: 82px;
+        }
+    }
+
+    .modal{
+        &__inner{
+            width: 90%;
+        }
+    }
+}

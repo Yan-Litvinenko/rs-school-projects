@@ -1,0 +1,4 @@
+{
+    "pattern": "^(feat|fix)\/RSS-PZ-[0-9]+_[a-zA-Z]+$",
+    "errorMessage": "The branch name must start with 'fix|feat/RSS-PZ-numberBrunch_functionName'"
+}

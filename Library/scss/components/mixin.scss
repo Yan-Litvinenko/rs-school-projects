@@ -1,0 +1,14 @@
+@mixin font__sfhw ($font-size: 20px, $font-family: 'Inter-Regular', $line-height: 50px, $font-weight: 400, $font-style: normal) {
+    font-size: $font-size;
+    font-family: $font-family;
+    line-height: $line-height;
+    font-weight: $font-weight;
+    font-style: $font-style;
+}
+
+@mixin bg__psr($background-position: center, $background-size: cover, $background-repeat: no-repeat){
+    background-position: $background-position;
+    background-size: $background-size;
+    background-repeat: $background-repeat;
+}
+

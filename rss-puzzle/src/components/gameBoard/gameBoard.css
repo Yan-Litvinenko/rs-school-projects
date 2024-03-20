@@ -1,0 +1,178 @@
+:root {
+  --text-color: #fff;
+  --main-bg-color: rgb(153, 51, 102);
+}
+
+.header__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 15px;
+  gap: 10px 0;
+}
+
+.set-level {
+  color: #000;
+}
+
+.set-level__inner {
+  display: flex;
+  align-items: center;
+  gap: 0 5px;
+}
+
+.set-level__select {
+  cursor: pointer;
+  text-align: center;
+  width: 80px;
+}
+
+.settings {
+  display: flex;
+  gap: 0 5px;
+  justify-content: end;
+}
+
+.settings__item {
+  background-color: var(--main-bg-color);
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  width: 40px;
+  height: 40px;
+}
+
+.settings__deactive {
+  background-color: rgb(162, 162, 162);
+}
+
+.game {
+  background-color: rgb(255, 255, 255);
+}
+
+.game__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.puzzle__inner {
+  background-color: rgb(230, 227, 223);
+  display: grid;
+  grid-template-rows: repeat(10, 1fr);
+  margin-bottom: 20px;
+  min-height: 500px;
+  min-width: 768px;
+}
+
+.puzzle__row {
+  display: flex;
+}
+
+.puzzle__item {
+  border: 1px solid #000;
+  color: var(--text-color);
+  cursor: pointer;
+  text-align: center;
+  padding: 2px 10px;
+  position: relative;
+  transition: transform 1s;
+  height: 50px;
+}
+
+.puzzle__item--true::after {
+  content: '\2713';
+  color: rgb(9, 217, 9);
+  display: block;
+  position: absolute;
+  top: 2px;
+  font-size: 24px;
+  left: 2px;
+}
+
+.puzzle__item--false::after {
+  content: '\2716';
+  color: rgb(255, 44, 44);
+  display: block;
+  position: absolute;
+  top: 2px;
+  font-size: 24px;
+  left: 2px;
+}
+
+.sentence {
+  display: flex;
+  height: 50px;
+}
+
+.sentence__word {
+  cursor: pointer;
+  border: 1px solid #000;
+  color: var(--text-color);
+  text-align: center;
+  padding: 2px 10px;
+  transition: transform 1s;
+  height: 50px;
+}
+
+.hint-sentence {
+  display: flex;
+  grid-column: 1 / 3;
+  justify-self: center;
+}
+
+.translate-sentence {
+  color: #000;
+}
+
+.audio-sentence {
+  cursor: pointer;
+  width: 33px;
+}
+
+.hint-sentence--deactive {
+  opacity: 0;
+  position: relative;
+  z-index: -1;
+}
+
+.control-level {
+  display: flex;
+  justify-content: center;
+  gap: 0 15px;
+  margin-top: 20px;
+}
+
+.control-level__btn {
+  background-color: var(--main-bg-color);
+  border-radius: 7px;
+  color: inherit;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s;
+  text-transform: capitalize;
+  height: 50px;
+  width: 100%;
+  max-width: 200px;
+}
+
+.control-level__btn--deactive {
+  color: #b6aeae;
+  cursor: auto;
+}
+
+.disable-action {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1000;
+}
+
+.hide {
+  opacity: 0;
+}

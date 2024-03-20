@@ -1,0 +1,193 @@
+/* Basic Style */
+body {
+    background-color: #f8f8f8;
+    color: #333;
+    font-family: Lato, sans-serif;
+}
+
+.header {
+    width: 500px;
+    margin: 0 auto;
+    display: block;
+    text-align: right;
+}
+
+.header__img {
+    width: 100%;
+}
+
+.header .more_inf {
+    font-family: fantasy, cursive;
+}
+
+@media (max-width:768px) {
+    .header {
+        text-align: center;
+    }
+}
+
+.main {
+    display: block;
+    width: 500px;
+    margin: 0 auto 0;
+}
+
+.addited__text,
+.completed__text,
+.completed__label,
+.incomplete__text,
+.incomplete__label {
+    width: 56%;
+    display: inline-block;
+    flex-grow: 1
+}
+
+.addited__box {
+    display: flex;
+}
+
+ul {
+    margin: 0;
+    padding: 0px;
+}
+
+li,
+h3 {
+    list-style: none;
+}
+
+input,
+button {
+    outline: none;
+}
+
+.btn {
+    background: none;
+    border: 0px;
+    color: #888;
+    font-size: 15px;
+    width: 60px;
+    font-family: Lato, sans-serif;
+    cursor: pointer;
+}
+
+.btn:hover {
+    color: #3a3A3a;
+}
+
+/* Heading */
+.title,
+.addited__label {
+    color: #333;
+    font-weight: 700;
+    font-size: 15px;
+    border-bottom: 2px solid #333;
+    padding: 30px 0 10px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.addited__text,
+.completed__text,
+.incomplete__text {
+    margin: 0;
+    font-size: 18px;
+    line-height: 18px;
+    height: 21px;
+    padding: 0 9px;
+    border: 1px solid #dDd;
+    background: #FFF;
+    border-radius: 6px;
+    font-family: Lato, sans-serif;
+    color: #888;
+}
+
+.addited__text:focus,
+.completed__text:focus,
+.incomplete__text:focus {
+    color: #333;
+}
+
+/* New Task */
+.addited__label {
+    display: block;
+    margin: 0 0 20px;
+}
+
+#new-task {
+    width: 318px;
+}
+
+/* Task list */
+.completed__item,
+.incomplete__item {
+    overflow: hidden;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.completed__checkbox,
+.incomplete__checkbox {
+    margin: 0 10px;
+}
+
+.completed__label,
+.incomplete__label {
+    padding-left: 10px;
+    box-sizing: border-box;
+    font-size: 18px;
+    width: 226px;
+}
+
+.completed__text {
+    width: 226px
+}
+
+.completed__remove,
+.incomplete__remove {
+    height: 2em;
+    transform: rotateZ(45deg);
+    transition: transform 200ms ease-in;
+}
+
+.completed__remove:hover,
+.incomplete__remove:hover {
+    transform: rotateZ(0);
+}
+
+
+/* Completed */
+.completed__label {
+    text-decoration: line-through;
+    color: #888;
+}
+
+/* Edit Task */
+.completed__text,
+.incomplete__text {
+    display: none
+}
+
+.incomplete__label_mode {
+    display: inline-block;
+    width: 224px
+}
+
+.incomplete__text_mode {
+    display: none;
+}
+
+.incomplete__list .incomplete__item.editMode input[type=text],
+.completed__list .completed__item.editMode input[type=text]{
+    display:inline-block;
+    width:224px
+}
+
+.completed__list .completed__item.editMode .complete__label,
+.incomplete__list .incomplete__item.editMode .incomplete__label{
+    display:none;
+}
+

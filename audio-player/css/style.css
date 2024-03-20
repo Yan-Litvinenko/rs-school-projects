@@ -1,0 +1,389 @@
+:root {
+  --color: rgb(207, 51, 48);
+  --colorShadow: 207, 51, 48;
+  --colorVector: rgb(254, 230, 0);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  background: #000000;
+  font-size: 18px;
+  font-family: sans-serif;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  background-image: url(../assets/images/KISH.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 30%;
+  height: 100vh;
+}
+
+.player {
+  background: #000000;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  min-height: 400px;
+}
+
+.player__top {
+  opacity: 1;
+  background-image: url(../assets/images/love.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 25%;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  min-height: 270px;
+}
+
+.player__panel {
+  background: -webkit-linear-gradient(45deg, rgb(30, 30, 30), var(--color));
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.player__progress-container {
+  color: #FFF;
+  font-size: 14px;
+  position: relative;
+  height: 60px;
+}
+
+.player__progress {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #000;
+  border-radius: 10px;
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  outline: none;
+  top: 11px;
+  left: 83px;
+  height: 10px;
+  width: 304px;
+}
+
+.player__volume {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #000;
+  position: absolute;
+  top: -43px;
+  right: 60px;
+  transform: rotate(270deg);
+  height: 2px;
+  width: 40px;
+}
+
+.player__duration-time {
+  position: absolute;
+  top: -6px;
+  right: 70px;
+}
+
+.player__current-time {
+  position: absolute;
+  top: 31px;
+  left: 81px;
+}
+
+.track {
+  display: grid;
+  grid-template-columns: 20% 70% 10%;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 400px;
+  height: 80px;
+}
+
+.track__play {
+  cursor: pointer;
+  justify-self: end;
+  grid-row: 1/-1;
+  filter: invert(1);
+  transition: all 0.3s;
+  height: 50px;
+  width: 50px;
+}
+
+.track__play:hover {
+  filter: invert(0.8);
+}
+
+.track__play:active {
+  scale: 1.04;
+}
+
+.track__author {
+  align-self: end;
+  color: var(--colorVector);
+  font-size: 20px;
+  margin-left: 15px;
+}
+
+.track__name {
+  align-self: start;
+  color: #FFF;
+  font-size: 16px;
+  grid-column: 2/3;
+  grid-row: 2/3;
+  text-transform: capitalize;
+  margin-left: 15px;
+  margin-top: 5px;
+}
+
+.track__backward {
+  align-self: end;
+  cursor: pointer;
+  filter: invert(1);
+  transition: all 0.4s;
+  height: 30px;
+  width: 30px;
+}
+
+.track__backward:hover {
+  filter: invert(0.8);
+}
+
+.track__backward:active {
+  scale: 1.04;
+}
+
+.track__forward {
+  align-self: start;
+  cursor: pointer;
+  filter: invert(1);
+  transition: all 0.4s;
+  grid-column: 3/-1;
+  grid-row: 2/3;
+  height: 30px;
+  width: 30px;
+}
+
+.track__forward:hover {
+  filter: invert(0.8);
+}
+
+.track__forward:active {
+  scale: 1.04;
+}
+
+.footer {
+  position: absolute;
+  bottom: 5px;
+  width: 100%;
+}
+
+.footer__container {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 1440px;
+}
+
+.applications {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.applications__item {
+  color: #FFF;
+  font-size: 22px;
+}
+
+.applications__item--github {
+  position: relative;
+  z-index: 1;
+}
+
+.applications__item--github::after {
+  content: "";
+  background-color: transparent;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease-out;
+  height: 0.1px;
+  width: 5px;
+  z-index: -1;
+}
+
+.applications__item--github:hover::after {
+  box-shadow: 0px 0px 65px 45px rgb(var(--colorShadow), 0.23);
+}
+
+.applications__item--year {
+  font-size: 50px;
+  font-family: serif;
+  letter-spacing: 5px;
+}
+
+.applications__item--rs-school {
+  position: relative;
+  z-index: 1;
+}
+
+.applications__item--rs-school::after {
+  content: "";
+  background-color: transparent;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease-out;
+  height: 0.1px;
+  width: 50px;
+  z-index: -1;
+}
+
+.applications__item--rs-school:hover::after {
+  box-shadow: 0px 0px 65px 45px rgb(var(--colorShadow), 0.23);
+}
+
+.applications__link {
+  color: white;
+}
+
+.applications__rs-school {
+  height: 60px;
+  width: 100px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--colorVector);
+  border-radius: 5px;
+  position: relative;
+  margin-top: 0px;
+  height: 10px;
+  width: 5px;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 1
+  }
+
+  50% {
+    opacity: 0
+  }
+
+  100% {
+    opacity: 1
+  }
+}
+
+
+@media(max-width: 768px) {
+  .container {
+    background-position: center -79px;
+    height: calc(100vh + 79px);
+  }
+}
+
+@media(max-width: 500px) {
+  .player {
+    width: 380px;
+  }
+
+  .player__progress {
+    width: 240px;
+  }
+
+  .player__volume {
+    right: 43px;
+  }
+
+  .player__duration-time {
+    right: 65px;
+  }
+
+  .track {
+    grid-template-columns: 18% 70% 12%;
+  }
+}
+
+@media(max-width: 420px) {
+  .player {
+    width: 350px;
+  }
+
+  .player__progress {
+    width: 225px;
+    left: 70px;
+  }
+
+  .player__current-time {
+    left: 75px;
+  }
+
+  .applications__item--year {
+    font-size: 35px;
+  }
+
+  .applications__rs-school {
+    width: 85px;
+  }
+
+  .applications__github {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media(max-width: 375px) {
+  .player {
+    width: 310px;
+  }
+
+  .player__volume {
+    right: 33px;
+  }
+
+  .player__progress {
+    left: 50px;
+  }
+
+  .player__duration-time {
+    right: 40px;
+  }
+
+  .player__current-time {
+    left: 55px;
+  }
+
+  .applications__item--year {
+    font-size: 30px;
+  }
+
+  .applications__rs-school {
+    width: 75px;
+    height: 30px;
+  }
+
+  .applications__github {
+    width: 30px;
+    height: 30px;
+  }
+}
