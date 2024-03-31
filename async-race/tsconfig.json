@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "lib": ["es6", "dom"],
+        "forceConsistentCasingInFileNames": true /* Гарантирует, что регистр правильный в импортах. */,
+        "strict": true /* Включает все строгие опции проверки типов. */,
+        "noImplicitAny": true /* Включает отчет об ошибках для выражений и объявлений с неявным типом 'any'. */,
+        "skipLibCheck": true /* Пропускает проверку типов всех файлов .d.ts. */,
+        "resolveJsonModule": true /* Позволяет импортировать JSON файлы в качестве модулей. */,
+        "esModuleInterop": true /* Включает совместимость с модулями, использующими экспорт по умолчанию в формате ES6. */
+    }
+}

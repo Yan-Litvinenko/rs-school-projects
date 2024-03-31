@@ -1,0 +1,85 @@
+.page {
+    display: flex;
+    gap: 0 10px;
+}
+
+.page__item,
+.panel__race,
+.panel__reset {
+    background-color: yellowgreen;
+    border-radius: 10px;
+    border: none;
+    color: #000;
+    cursor: pointer;
+    margin-bottom: 10px;
+    padding: 5px 15px;
+    text-transform: uppercase;
+}
+
+.create__car-button:active,
+.page__item:active,
+.panel__generate:active,
+.panel__race:active,
+.panel__reset:active,
+.update__car-button:active {
+    scale: 1.02;
+}
+
+.form__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 10px 0;
+}
+
+.create,
+.update {
+    display: flex;
+    gap: 0 10px;
+}
+
+.create-car {
+    margin-bottom: 10px;
+}
+
+.create__car-name,
+.update__car-name {
+    padding: 5px;
+}
+
+.create__car-button,
+.update__car-button,
+.panel__generate {
+    background-color: rgb(114, 114, 232);
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    min-width: 100px;
+    text-transform: uppercase;
+}
+
+.panel__generate {
+    height: 25.25px;
+}
+
+.create__car-color,
+.update__car-color {
+    cursor: pointer;
+    padding: 0px;
+}
+
+.panel {
+    display: flex;
+    gap: 0 10px;
+    margin-bottom: 30px;
+}
+
+.garage__title {
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.garage__count-car {
+    font-size: 36px;
+    margin-bottom: 10px;
+}

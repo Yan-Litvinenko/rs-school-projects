@@ -1,0 +1,32 @@
+.winners__title {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.table__inner {
+    display: grid;
+    width: max-content;
+}
+
+.table__title {
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    background-color: rgb(103, 103, 255);
+    padding: 5px 10px;
+}
+
+.table__row {
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    padding: 5px 10px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+.table__car-img {
+    position: relative;
+    top: -36px;
+    left: -20px;
+    width: 90px;
+}

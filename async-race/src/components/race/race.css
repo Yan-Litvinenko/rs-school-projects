@@ -1,0 +1,113 @@
+.race {
+    overflow: hidden;
+}
+
+.race__item {
+    border-bottom: 3px dashed #fff;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: max-content max-content auto;
+    grid-template-rows: 1fr 1fr;
+    min-height: 90px;
+    position: relative;
+}
+
+.race__item + .race__item {
+    margin-top: 40px;
+}
+
+.race__edit {
+    display: flex;
+    gap: 0 10px;
+    margin-bottom: 10px;
+}
+
+.race__select-car,
+.race__delete-car {
+    background-color: rgb(164, 147, 255);
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    padding: 5px 15px;
+    position: relative;
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+.race__destinations {
+    display: flex;
+    gap: 0 10px;
+    grid-row: 2 / 3;
+    margin-bottom: 10px;
+}
+
+.race__destinations-item {
+    background-color: transparent;
+    border-radius: 6px;
+    border: 1px solid green;
+    color: green;
+    cursor: pointer;
+    padding: 7px;
+    position: relative;
+    z-index: 2;
+}
+
+.race__destinations--active {
+    color: #fff;
+    background-color: green;
+}
+
+.race__car-name {
+    color: gold;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.race__img {
+    left: 0px;
+    position: absolute;
+    top: 26px;
+}
+
+.race__pagination {
+    display: flex;
+    gap: 0 10px;
+}
+
+.race__pagination-btn {
+    background-color: chartreuse;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-top: 40px;
+    min-width: 75px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+}
+
+.race__finish {
+    align-self: end;
+    grid-row: 2/3;
+    height: 50px;
+    left: 85%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+}
+
+.race__pagination-btn:active,
+.race__destinations-item:active,
+.race__select-car:active,
+.race__delete-car:active {
+    scale: 1.01;
+}
+
+@keyframes engine {
+    0% {
+        left: 0%;
+    }
+
+    100% {
+        left: 85%;
+    }
+}

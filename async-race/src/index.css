@@ -1,0 +1,22 @@
+@import '~reset-css/reset.css';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+#root {
+    max-width: 1840px;
+    margin: 0 auto;
+    padding: 10px;
+}
