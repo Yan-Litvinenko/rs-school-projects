@@ -1,0 +1,61 @@
+.header {
+    align-items: center;
+    background-color: var(--bg-content);
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    grid-column: 1/ -1;
+    grid-row: 1 / 2;
+    justify-content: space-between;
+    padding: 7px 15px;
+
+    &__user span {
+        font-weight: 600;
+    }
+
+    &__box {
+        align-items: flex-end;
+        column-gap: 15px;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    &__btn {
+        background-color: var(--bg-btn);
+        border-radius: 7px;
+        border: none;
+        color: var(--main-color);
+        font-size: 16px;
+        padding: 10px;
+        transition: text-shadow 0.3s ease;
+    }
+}
+
+@media (hover: hover) {
+    .header__btn:hover {
+        text-shadow: 1px 1px 1px var(--main-color);
+    }
+}
+
+@media (max-width: 500px) {
+    .header {
+        gap: 8px;
+        justify-content: center;
+        padding: 12px 15px;
+
+        &__app_name {
+            display: none;
+        }
+
+        &__btn {
+            text-align: center;
+            width: 100%;
+        }
+
+        &__box {
+            column-gap: 7px;
+            width: 100%;
+        }
+    }
+}

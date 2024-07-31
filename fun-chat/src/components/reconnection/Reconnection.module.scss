@@ -1,0 +1,26 @@
+.reconnection {
+    align-items: center;
+    display: flex;
+    inset: 0;
+    justify-content: center;
+    position: absolute;
+    z-index: 1000;
+
+    &__inner {
+        background-color: var(--bg-content);
+        border-radius: 40px;
+        padding: 40px;
+        width: max-content;
+    }
+
+    &__title {
+        color: var(--bg-form-btn);
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+
+    &__text {
+        font-size: 18px;
+        text-align: center;
+    }
+}

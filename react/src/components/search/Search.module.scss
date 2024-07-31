@@ -1,0 +1,26 @@
+.search {
+    column-gap: 10px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+
+    &__input {
+        border-radius: 20px;
+        font-size: 22px;
+        max-width: 475px;
+        outline: none;
+        padding: 7px 15px;
+        width: 100%;
+    }
+
+    &__btn {
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 22px;
+        max-width: 150px;
+        outline: none;
+        padding: 5px;
+        transition: all 0.3s;
+        width: 100%;
+    }
+}

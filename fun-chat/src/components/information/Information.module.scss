@@ -1,0 +1,118 @@
+.information {
+    align-items: center;
+    display: flex;
+    font-size: 18px;
+    justify-content: center;
+    line-height: 18px;
+    min-height: 100vh;
+    padding: 10px 0px;
+
+    &__inner {
+        background-color: var(--bg-content);
+        border-radius: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 1300px;
+        padding: 40px;
+        width: 100%;
+    }
+
+    &__title {
+        color: var(--bg-form-btn);
+        font-size: 48px;
+        line-height: 48px;
+        margin-bottom: 35px;
+        text-align: center;
+    }
+
+    &__list_main {
+        counter-reset: item;
+        margin-bottom: 30px;
+    }
+
+    &__item_main {
+        counter-increment: item;
+        margin-top: 15px;
+    }
+
+    &__item_main::before {
+        content: counters(item, '.') '. ';
+        font-weight: bold;
+    }
+
+    &__list_second {
+        counter-reset: subitem;
+        margin-left: 20px;
+    }
+
+    &__item_second {
+        counter-increment: subitem;
+        margin-top: 5px;
+    }
+
+    &__item_second::before {
+        content: counters(item, '.') '.' counters(subitem, '.') ' ';
+        font-weight: bold;
+    }
+
+    &__link {
+        transition: all 0.3s ease;
+    }
+}
+
+.back {
+    align-items: center;
+    background-color: var(--bg-form-btn);
+    border-radius: 40px;
+    border: none;
+    color: #fff;
+    display: flex;
+    font-size: 22px;
+    height: 50px;
+    justify-content: center;
+    max-width: 30%;
+    outline: none;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+@media (hover: hover) {
+    .information__link:hover,
+    .back:hover {
+        text-shadow: 1px 1px 1px var(--main-color);
+    }
+}
+
+@media (max-width: 768px) {
+    .information {
+        &__inner {
+            padding: 20px;
+        }
+
+        &__title {
+            font-size: 40px;
+            line-height: 40px;
+            margin-bottom: 25px;
+        }
+    }
+
+    .back {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 450px) {
+    .information {
+        &__inner {
+            padding: 10px;
+        }
+
+        &__title {
+            font-size: 35px;
+            line-height: 35px;
+            margin-bottom: 15px;
+        }
+    }
+}

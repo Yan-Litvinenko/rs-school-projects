@@ -1,0 +1,13 @@
+.notFound {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 / -1;
+    justify-self: center;
+
+    &__btn {
+        cursor: pointer;
+        max-width: 180px;
+        padding: 8px;
+    }
+}

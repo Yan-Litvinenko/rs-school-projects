@@ -1,0 +1,22 @@
+.menu {
+    background-color: var(--bg-body);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    max-width: 200px;
+    position: absolute;
+    width: max-content;
+    z-index: 10;
+
+    &__item {
+        cursor: pointer;
+        padding: 8px;
+    }
+}
+
+@media (hover: hover) {
+    .menu__item:hover {
+        background-color: var(--bg-btn);
+    }
+}

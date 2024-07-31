@@ -1,0 +1,86 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: $bg-body;
+    color: $text-dark;
+    font-family: 'Inter-Regular';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+ul,
+ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+.body-inner {
+    overflow-x: clip;
+    position: relative;
+    width: 100%;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 0px 40px;
+}
+
+.page {
+    margin-bottom: 100px;
+}
+
+.title {
+    font-family: 'Inter-Regular';
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 125%;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.title span {
+    color: $text-accent;
+    font-style: italic;
+}
+
+.btn {
+    background-color: transparent;
+    border-radius: 100px;
+    font-family: 'Inter-Regular';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    outline: none;
+    width: 200px;
+}
+
+@media (max-width: 550px) {
+    .container {
+        padding: 0 16px;
+    }
+}
+
+@media (max-width: 380px) {
+    .title {
+        font-size: 32px !important;
+        line-height: 40px !important;
+    }
+}

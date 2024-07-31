@@ -1,0 +1,27 @@
+.main {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+
+    &__inner {
+        display: grid;
+        gap: 15px;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: auto auto;
+        max-width: 1300px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .main__inner {
+        height: calc(100vh - 15px);
+    }
+}
+
+@media (max-width: 500px) {
+    .main__inner {
+        gap: 8px;
+    }
+}

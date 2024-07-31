@@ -1,0 +1,159 @@
+.slider {
+    overflow: hidden;
+    position: relative;
+
+    &__inner {
+        display: flex;
+        flex-wrap: nowrap;
+        transition: all 0.7s;
+    }
+
+    &__item {
+        display: flex;
+        flex-shrink: 0;
+        justify-content: center;
+        width: 100%;
+    }
+
+    &__item-inner {
+        max-width: 480px;
+    }
+
+    &__picture img {
+        margin-bottom: 20px;
+        max-width: 480px;
+    }
+
+    &__title {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 125%;
+        pointer-events: none;
+        text-align: center;
+        user-select: none;
+    }
+
+    &__description {
+        line-height: 150%;
+        margin: 16px 0;
+        text-align: center;
+    }
+
+    &__price {
+        font-size: 24px;
+        line-height: 125%;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    &__vector {
+        align-items: center;
+        border-radius: 50%;
+        border: 1px solid $border-dark;
+        cursor: pointer;
+        display: flex;
+        height: 60px;
+        justify-content: center;
+        position: absolute;
+        top: 47%;
+        transform: translateY(-50%);
+        transition: all 0.3s;
+        width: 60px;
+    }
+
+    &__vector--left {
+        left: 1px;
+    }
+
+    &__vector--right {
+        right: 7px;
+    }
+
+    &__vector svg {
+        stroke: $border-dark;
+        transition: all 0.3s;
+    }
+}
+
+.pagination {
+    display: flex;
+    gap: 0 12px;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+
+    &__item {
+        background-color: $border-light;
+        border-radius: 100px;
+        height: 4px;
+        width: 40px;
+    }
+
+    &__item:not(.pagination__item--active) {
+        cursor: pointer;
+    }
+
+    &__item--active .pagination__progress {
+        background-color: $border-dark;
+    }
+
+    &__progress {
+        height: inherit;
+        width: 0%;
+    }
+}
+
+@media (hover: hover) {
+    .slider__vector:hover {
+        background-color: $text-dark;
+        border-color: $text-dark;
+    }
+    .slider__vector:hover svg {
+        stroke: $bg-body;
+    }
+}
+
+@media (max-width: 550px) {
+    .favorites__title {
+        font-size: 50px;
+        line-height: 60px;
+    }
+
+    .slider {
+        &__vector {
+            display: none;
+        }
+
+        &__item-inner {
+            max-width: 380px;
+        }
+
+        &__picture img {
+            max-width: 380px;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .slider {
+        &__item-inner {
+            max-width: 320px;
+        }
+
+        &__picture img {
+            max-width: 320px;
+        }
+    }
+}
+
+@media (max-width: 350px) {
+    .slider {
+        &__item-inner {
+            max-width: 310px;
+        }
+
+        &__picture img {
+            max-width: 310px;
+        }
+    }
+}

@@ -1,0 +1,100 @@
+.aside {
+    background-color: var(--bg-content);
+    border-radius: 10px;
+
+    &__inner {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        height: 500px;
+        justify-content: flex-start;
+        overflow-y: auto;
+        padding: 10px 15px;
+        row-gap: 25px;
+    }
+
+    &__search {
+        width: 100%;
+    }
+}
+
+.user_list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &__item {
+        cursor: pointer;
+        padding: 20px 15px 20px 30px;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    &__item_online {
+        &::after {
+            background-color: green;
+            border-radius: 50%;
+            content: '';
+            display: block;
+            height: 8px;
+            left: 10px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+        }
+    }
+
+    &__item_offline {
+        &::after {
+            background-color: var(--bg-form-btn);
+            border-radius: 50%;
+            content: '';
+            display: block;
+            height: 8px;
+            left: 10px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+        }
+    }
+
+    &__item_active {
+        background: linear-gradient(87deg, rgba(34, 33, 49, 1) 30%, rgba(54, 53, 79, 1) 100%);
+    }
+}
+
+.unread_messages {
+    background-color: var(--bg-form-btn);
+    border-radius: 50%;
+    display: block;
+    height: 25px;
+    padding: 3px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 25px;
+}
+
+@media (hover: hover) {
+    .user_list__item:hover,
+    .user_list__item_deactive:hover {
+        background-color: var(--bg-placeholder);
+    }
+
+    .user_list__item:hover {
+        background: linear-gradient(87deg, rgba(34, 33, 49, 1) 30%, rgba(54, 53, 79, 1) 100%);
+    }
+}
+
+@media (max-width: 768px) {
+    .aside {
+        grid-column: 1 / -1;
+
+        &__inner {
+            height: 83.38vh;
+        }
+    }
+}

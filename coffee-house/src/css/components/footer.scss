@@ -1,0 +1,128 @@
+.footer {
+    &__inner {
+        align-items: center;
+        background-color: $bg-container;
+        border-radius: 40px;
+        column-gap: 100px;
+        display: flex;
+        margin-bottom: 40px;
+        padding: 100px;
+    }
+}
+
+.offer {
+    display: flex;
+    flex-direction: column;
+    max-width: 530px;
+    row-gap: 40px;
+
+    &__title {
+        color: $text-light;
+        margin-bottom: 0;
+        text-align: left;
+    }
+
+    &__list {
+        column-gap: 12px;
+        display: flex;
+    }
+
+    &__item {
+        border-radius: 50%;
+        border: 1px solid $border-light;
+        cursor: pointer;
+
+        height: 60px;
+
+        transition: all 0.3s;
+        width: 60px;
+    }
+
+    &__item svg path {
+        stroke: $text-light;
+        transition: all 0.3s;
+    }
+
+    &__link {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        line-height: 16px;
+        width: 100%;
+    }
+}
+
+.contact {
+    color: $text-light;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 15px;
+    }
+
+    &__item {
+        position: relative;
+        width: max-content;
+
+        &::after {
+            background-color: $text-light;
+            bottom: -4px;
+            content: '';
+            display: block;
+            height: 2px;
+            left: 50%;
+            position: absolute;
+            right: 50%;
+            transition: all 0.3s;
+        }
+    }
+}
+
+@media (hover: hover) {
+    .offer__item:hover {
+        background-color: $bg-body;
+    }
+
+    .offer__item:hover svg path {
+        stroke: $text-dark;
+    }
+
+    .contact__item:not(.contact__item--deactive):hover::after {
+        left: 0;
+        right: 0;
+    }
+}
+
+@media (max-width: 1050px) {
+    .footer__inner {
+        column-gap: 50px;
+    }
+}
+
+@media (max-width: 924px) {
+    .footer__inner {
+        align-items: start;
+        column-gap: 0px;
+        flex-direction: column;
+        padding: 100px 60px;
+        row-gap: 100px;
+    }
+}
+
+@media (max-width: 550px) {
+    .footer__inner {
+        padding: 100px 16px;
+        row-gap: 40px;
+    }
+}
+
+@media (max-width: 380px) {
+    .footer__inner {
+        padding: 60px 16px;
+    }
+}
